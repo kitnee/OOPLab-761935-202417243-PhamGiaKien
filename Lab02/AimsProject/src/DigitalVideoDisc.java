@@ -13,10 +13,6 @@ public class DigitalVideoDisc {
         return category;
     }
 
-    public String getDirectory() {
-        return director;
-    }
-
     public String getDirector() {
         return director;
     }
@@ -60,4 +56,8 @@ public class DigitalVideoDisc {
         this.length = length;
         this.cost = cost;
     }   
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
