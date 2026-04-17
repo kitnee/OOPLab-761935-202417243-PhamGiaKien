@@ -1,0 +1,21 @@
+Q1 (Section 4): What should be the return type of the toString() method?
+Answer: The return type of the toString() method must be a String. It overrides the default toString() method of the Object class to return a string representation of the specific object.
+
+Q2 (Section 15): If the passing object is not an instance of Media, what happens?
+Answer: If the equals() method directly casts the object without checking, it will throw a ClassCastException at runtime. To prevent this, we must use the 'instanceof' operator first (if (!(o instanceof Media)) return false;).
+
+Q3 (Section 16): Observe what happens and explain in detail when using toString() with an ArrayList of Media.
+Answer: When iterating through the ArrayList<Media> and calling m.toString(), Java dynamically binds the method call to the specific overridden toString() method of the actual object type (Book, CD, or DVD) at runtime. This is an example of Runtime Polymorphism (Dynamic Method Dispatch).
+
+Q4 (Section 17): Questions about Comparable interface:
+- What class should implement the Comparable interface?
+Answer: The Media class should implement the Comparable<Media> interface.
+
+- How should you implement the compareTo() method to reflect the ordering that we want?
+Answer: We would override compareTo(Media other) in the Media class and write logic to compare 'this' object with 'other' object based on title, then cost.
+
+- Can we have two ordering rules if we use the Comparable interface approach?
+Answer: No. The Comparable interface only allows defining a single "natural ordering" for a class. To have multiple sorting rules, we must use the Comparator interface.
+
+- How would you modify your code to allow a different ordering rule for DVDs?
+Answer: We can keep the default ordering in the Media class using Comparable. For the DVD-specific sorting rule (by title, then decreasing length, then cost), we create a separate custom Comparator specifically for DigitalVideoDisc and pass it to Collections.sort() when we specifically want to sort a list of DVDs.
