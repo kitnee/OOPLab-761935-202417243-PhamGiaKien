@@ -1,0 +1,38 @@
+Lab 04 - Answers
+
+1. Compare the top-level containers in Swing and AWT
+
+In AWT, the top-level container used in the accumulator example is Frame.
+In Swing, the corresponding top-level container is JFrame.
+
+Frame belongs to java.awt and uses native heavyweight components. JFrame belongs
+to javax.swing and is a lightweight Swing container. Swing components should be
+added to the JFrame content pane instead of directly to the frame.
+
+2. Compare AWT component names and Swing component names
+
+Some corresponding components are:
+- Label in AWT corresponds to JLabel in Swing.
+- TextField in AWT corresponds to JTextField in Swing.
+- Button in AWT corresponds to JButton in Swing.
+- Panel in AWT corresponds to JPanel in Swing.
+
+Swing component names usually start with the letter J.
+
+3. Compare event handling in Swing and AWT
+
+The event-handling mechanism is similar in both AWT and Swing. Components can
+register listeners such as ActionListener, and the listener handles events by
+implementing methods such as actionPerformed(ActionEvent evt).
+
+In the accumulator examples, both TextField and JTextField use an ActionListener
+to handle the event when the user presses Enter after typing a number.
+
+4. Compare the appearance of AWT and Swing applications
+
+AWT applications use native platform components, so their appearance depends more
+on the operating system.
+
+Swing applications use lightweight components and support pluggable look and
+feel, so their appearance is more flexible and can be more consistent across
+different platforms.
